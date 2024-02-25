@@ -81,52 +81,81 @@ function RecipeFinder() {
     }
 
     return (
-        <div>
-            <h1>Random Recipe Generator</h1>
-            <div>
-                <label htmlFor="vegan">
+        <div className="flex flex-col gap-5 items-center justify-center">
+            <h1 className="font-bold text-4xl">Random Recipe Generator</h1>
+            <ul className="flex flex-col gap-2 items-center justify-center list-none">
+                <li>
                     <input
                         type="checkbox"
                         id="vegan"
                         name="vegan"
                         checked={tags.vegan}
                         onChange={handleChange}
+                        className="mx-10 hidden peer"
                     />
-                    Vegan
-                </label>
-                <label htmlFor="vegetarian">
+                    <label
+                        htmlFor="vegan"
+                        className="peer-checked:bg-dark_green-300"
+                    >
+                        Vegan
+                    </label>
+                </li>
+
+                <li>
                     <input
                         type="checkbox"
                         id="vegetarian"
                         name="vegetarian"
                         checked={tags.vegetarian}
                         onChange={handleChange}
+                        className="mx-10 hidden peer"
                     />
-                    Vegetarian
-                </label>
-                <label htmlFor="gluten">
+                    <label
+                        htmlFor="vegetarian"
+                        className="peer-checked:bg-dark_green-300"
+                    >
+                        Vegetarian
+                    </label>
+                </li>
+                <li>
                     <input
                         type="checkbox"
                         id="gluten"
                         name="gluten"
                         checked={tags.gluten}
                         onChange={handleChange}
+                        className="mx-10 hidden peer"
                     />
-                    Gluten Free
-                </label>
-
-                <label htmlFor="dairy">
+                    <label
+                        htmlFor="gluten"
+                        className="peer-checked:bg-dark_green-300"
+                    >
+                        Gluten Free
+                    </label>
+                </li>
+                <li>
                     <input
                         type="checkbox"
                         id="dairy"
                         name="dairy"
                         checked={tags.dairy}
                         onChange={handleChange}
+                        className="mx-10 hidden peer"
                     />
-                    Dairy Free
-                </label>
-            </div>
-            <button onClick={generateRecipe}>Generate!</button>
+                    <label
+                        htmlFor="dairy"
+                        className="peer-checked:bg-dark_green-300"
+                    >
+                        Dairy Free
+                    </label>
+                </li>
+            </ul>
+            <button
+                onClick={generateRecipe}
+                className="bg-celadon-800 px-10 py-2"
+            >
+                Generate!
+            </button>
             {Object.keys(recipes).length > 0 ? <Recipe recipe={recipes} /> : ""}
             <p>Powered by Spoonacular API</p>
         </div>
