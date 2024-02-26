@@ -83,7 +83,7 @@ function RecipeFinder() {
     return (
         <div className="flex flex-col gap-5 items-center justify-center">
             <h1 className="font-bold text-4xl">Random Recipe Generator</h1>
-            <ul className="flex flex-col gap-2 items-center justify-center list-none">
+            <ul className="flex flex-col gap-5 items-center justify-center list-none text-xl">
                 <li>
                     <input
                         type="checkbox"
@@ -95,7 +95,7 @@ function RecipeFinder() {
                     />
                     <label
                         htmlFor="vegan"
-                        className="peer-checked:bg-dark_green-300"
+                        className="peer-checked:bg-dark_green-300 peer-checked:transition transition px-5 py-1 cursor-pointer rounded-xl hover:bg-celadon-800"
                     >
                         Vegan
                     </label>
@@ -108,11 +108,11 @@ function RecipeFinder() {
                         name="vegetarian"
                         checked={tags.vegetarian}
                         onChange={handleChange}
-                        className="mx-10 hidden peer"
+                        className="mx-10 hidden peer transition"
                     />
                     <label
                         htmlFor="vegetarian"
-                        className="peer-checked:bg-dark_green-300"
+                        className="peer-checked:bg-dark_green-300 peer-checked:transition transition px-5 py-1 cursor-pointer rounded-xl hover:bg-celadon-800"
                     >
                         Vegetarian
                     </label>
@@ -128,7 +128,7 @@ function RecipeFinder() {
                     />
                     <label
                         htmlFor="gluten"
-                        className="peer-checked:bg-dark_green-300"
+                        className="peer-checked:bg-dark_green-300 peer-checked:transition transition px-5 py-1 cursor-pointer rounded-xl hover:bg-celadon-800"
                     >
                         Gluten Free
                     </label>
@@ -144,7 +144,7 @@ function RecipeFinder() {
                     />
                     <label
                         htmlFor="dairy"
-                        className="peer-checked:bg-dark_green-300"
+                        className="peer-checked:bg-dark_green-300 peer-checked:transition transition px-5 py-1 cursor-pointer rounded-xl hover:bg-celadon-800"
                     >
                         Dairy Free
                     </label>
@@ -152,7 +152,7 @@ function RecipeFinder() {
             </ul>
             <button
                 onClick={generateRecipe}
-                className="bg-celadon-800 px-10 py-2"
+                className="bg-celadon-800 px-10 py-2 rounded-xl hover:bg-celadon-700 transition"
             >
                 Generate!
             </button>

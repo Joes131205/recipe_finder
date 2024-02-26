@@ -8,3 +8,7 @@
         list-style: revert;
     }
 }
+
+a {
+    color: rgb(112, 255, 112);
+}
