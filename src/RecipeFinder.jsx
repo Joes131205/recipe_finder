@@ -47,10 +47,6 @@ function RecipeFinder() {
             title,
             summary,
             extendedIngredients,
-
-            // Time and cost
-            readyInMinutes,
-            pricePerServing,
         } = data.recipes[0];
 
         const recipeObject = {
@@ -64,8 +60,6 @@ function RecipeFinder() {
             title,
             summary,
             extendedIngredients,
-            readyInMinutes,
-            pricePerServing,
         };
         setRecipes(recipeObject);
     }
@@ -82,8 +76,10 @@ function RecipeFinder() {
 
     return (
         <div className="flex flex-col gap-5 items-center justify-center">
-            <h1 className="font-bold text-4xl">Random Recipe Generator</h1>
-            <ul className="flex flex-col gap-5 items-center justify-center list-none text-xl">
+            <h1 className="font-bold text-2xl md:text-4xl text-center">
+                Random Recipe Generator
+            </h1>
+            <ul className="flex flex-col gap-5 items-center justify-center list-none md:text-xl">
                 <li>
                     <input
                         type="checkbox"
@@ -95,7 +91,7 @@ function RecipeFinder() {
                     />
                     <label
                         htmlFor="vegan"
-                        className="peer-checked:bg-dark_green-300 peer-checked:transition transition px-5 py-1 cursor-pointer rounded-xl hover:bg-celadon-800"
+                        className="peer-checked:bg-dark_green-300 peer-checked:transition transition px-5 py-1 cursor-pointer rounded-xl hover:bg-celadon-800 border-4 border-dark_green-300"
                     >
                         Vegan
                     </label>
@@ -108,11 +104,11 @@ function RecipeFinder() {
                         name="vegetarian"
                         checked={tags.vegetarian}
                         onChange={handleChange}
-                        className="mx-10 hidden peer transition"
+                        className="mx-10 hidden peer"
                     />
                     <label
                         htmlFor="vegetarian"
-                        className="peer-checked:bg-dark_green-300 peer-checked:transition transition px-5 py-1 cursor-pointer rounded-xl hover:bg-celadon-800"
+                        className="peer-checked:bg-dark_green-300 peer-checked:transition transition px-5 py-1 cursor-pointer rounded-xl hover:bg-celadon-800 border-4 border-dark_green-300"
                     >
                         Vegetarian
                     </label>
@@ -128,7 +124,7 @@ function RecipeFinder() {
                     />
                     <label
                         htmlFor="gluten"
-                        className="peer-checked:bg-dark_green-300 peer-checked:transition transition px-5 py-1 cursor-pointer rounded-xl hover:bg-celadon-800"
+                        className="peer-checked:bg-dark_green-300 peer-checked:transition transition px-5 py-1 cursor-pointer rounded-xl hover:bg-celadon-800 border-4 border-dark_green-300"
                     >
                         Gluten Free
                     </label>
@@ -144,7 +140,7 @@ function RecipeFinder() {
                     />
                     <label
                         htmlFor="dairy"
-                        className="peer-checked:bg-dark_green-300 peer-checked:transition transition px-5 py-1 cursor-pointer rounded-xl hover:bg-celadon-800"
+                        className="peer-checked:bg-dark_green-300 peer-checked:transition transition px-5 py-1 cursor-pointer rounded-xl hover:bg-celadon-800 border-4 border-dark_green-300"
                     >
                         Dairy Free
                     </label>
@@ -157,7 +153,12 @@ function RecipeFinder() {
                 Generate!
             </button>
             {Object.keys(recipes).length > 0 ? <Recipe recipe={recipes} /> : ""}
-            <p>Powered by Spoonacular API</p>
+            <p>
+                Powered by{" "}
+                <a href="https://spoonacular.com/food-api" target="_blank">
+                    Spoonacular API
+                </a>
+            </p>
         </div>
     );
 }
